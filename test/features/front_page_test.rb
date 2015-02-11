@@ -3,10 +3,16 @@ require_relative '../test_helper'
 class FrontPageTest < FeatureTest
   def test_user_sees_greeting
     visit '/'
-    assert page.has_content?("Welcome to the TaskManager")
+    within('#greeting') do
+      assert page.has_content?("Welcome to the Task Manager")
+    end
   end
 
   def test_user_sees_index_and_new_links
-    # your test code here
+    visit '/'
+    within ('#actions') do
+      assert page.has_link?('Task Index')
+      assert page.has_link?('New Task')
+    end
   end
 end
