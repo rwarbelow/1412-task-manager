@@ -1,5 +1,3 @@
-require 'models/task_manager'
-
 class TaskManagerApp < Sinatra::Base
   set :root, File.join(File.dirname(__FILE__), '..')
   set :method_override, true
@@ -34,7 +32,6 @@ class TaskManagerApp < Sinatra::Base
 
   put '/tasks/:id' do |id|
     TaskManager.update(id.to_i, params[:task])
-    # redirect '/tasks'
     redirect "/tasks/#{id}"
   end
 
