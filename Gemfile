@@ -5,4 +5,6 @@ gem 'shotgun'
 
 group :test do
   gem 'minitest'
+  gem 'capybara'
+  gem 'launchy'
 end
