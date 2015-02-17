@@ -15,4 +15,5 @@ class FrontPageTest < FeatureTest
       assert page.has_link?('New Task')
     end
   end
+
 end
