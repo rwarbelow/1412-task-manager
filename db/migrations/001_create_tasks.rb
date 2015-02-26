@@ -1,8 +1,9 @@
 require 'sequel'
 
-databases = [Sequel.sqlite('db/task_manager_test.sqlite3'), Sequel.sqlite('db/task_manager_dev.sqlite3')]
+test_db = Sequel.postgres('task_manager_test')
+dev_db  = Sequel.postgres('task_manager_dev')
 
-databases.each do |database|
+[test_db, dev_db].each do |database|
   database.create_table :tasks do
     primary_key :id
     String :title

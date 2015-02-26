@@ -15,7 +15,7 @@ class TaskManagerTest < ModelTest
     assert_equal "Title - 1", task.title
     assert_equal "Description - 1", task.description
     assert_equal 1, task.id
-  end
+  end 
 
   def test_it_finds_task_by_id
     create_task(3)

@@ -3,9 +3,9 @@ require 'yaml/store'
 class TaskManager
   def self.database
     if ENV["TASK_MANAGER_ENV"] == 'test'
-      @database ||= Sequel.sqlite('db/task_manager_test.sqlite3')
+      @database ||= Sequel.postgres('task_manager_test')
     else
-      @database ||= Sequel.sqlite('db/task_manager_dev.sqlite3')
+      @database ||= Sequel.postgres('task_manager_dev')
     end
   end
 
